@@ -21,6 +21,14 @@ cp $(brew --prefix)/etc/redish_config ~/.redish_config
 Then **edit your `~/.redish_config`** to add your Redis hosts and credentials.
 See `redish_config.example` for the format.
 
+## Update
+
+```sh
+brew untap abubakir1997/redish
+brew tap abubakir1997/redish
+brew install redish
+```
+
 ## Usage
 
 ```sh
@@ -71,3 +79,14 @@ PRs welcome! Please file issues for bugs or feature requests.
 - Ensure `fish` and `redis-cli` are installed and in your PATH.
 - Ensure your `~/.redish_config` file is present and properly formatted.
 - For Fish autocompletion to work, make sure `fish/config.fish` is loaded in your Fish configuration.
+
+
+### Error: invalid attribute for formula 'abubakir1997/redish/redish': version (nil)
+
+Untap before installing
+
+```sh
+brew untap abubakir1997/redish
+brew tap abubakir1997/redish
+brew install redish
+```
