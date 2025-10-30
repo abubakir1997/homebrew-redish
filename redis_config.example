@@ -1,17 +1,6 @@
 # Example ~/.redis_config for redish
 # Format is similar to SSH config: one block per Redis host.
 
-Host customer-states-prod-1
-  HostName master.customer-states-prod-1.uo6enc.use1.cache.amazonaws.com
-  Port 6379
-  Password prod1Password
-
-Host customer-states-prod-2
-  HostName master.customer-states-prod-2.uo6enc.use1.cache.amazonaws.com
-  Port 6380
-  Password prod2Password
-  TLS yes
-
 Host analytics-cache
   HostName analytics.redis.internal.company.com
   Port 6379
