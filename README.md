@@ -127,7 +127,7 @@ To publish a new version of `redish` to Homebrew:
 5. **Commit and push the updated formula**
    ```sh
    git add Formula/redish.rb
-   git commit -m "Update formula for v1.0.1"
+   git commit -m "chore: update formula for v1.0.1"
    git push
    ```
 
