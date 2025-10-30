@@ -113,11 +113,6 @@ To publish a new version of `redish` to Homebrew:
    - Click "Draft a new release" and select your new tag.
 
 4. **Update the Homebrew formula (`Formula/redish.rb`)**  
-   - Change the `url` and `sha256` to the new version:
-     ```ruby
-     url "https://github.com/abubakir1997/homebrew-redish/archive/refs/tags/v1.0.1.tar.gz"
-     sha256 "<sha256_for_v1.0.1>"
-     ```
    - Get the sha256 for the new tarball:
      ```sh
      curl -L https://github.com/abubakir1997/homebrew-redish/archive/refs/tags/v1.0.1.tar.gz -o v1.0.1.tar.gz
