@@ -26,7 +26,10 @@ class Redish < Formula
       The redish script expects Fish shell and redis-cli to be installed.
       You may need to add ~/.redish_config and customize your passwords.
 
-      Use 'redish' from any shell.
+      By default, redish expects your config at ~/.redish_config.
+      To customize the path, set REDISH_CONFIG_FILE in your shell config.
+      For Fish, add: set -gx REDISH_CONFIG_FILE ~/.redish_config to ~/.config/fish/config.fish
+      For Bash/Zsh, add: export REDISH_CONFIG_FILE=~/.redish_config to ~/.bashrc or ~/.zshrc
     EOS
   end
 end
