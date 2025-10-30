@@ -9,10 +9,12 @@ class Redish < Formula
   depends_on "redis"
 
   def install
+    fish_completion.install "fish/config.fish" => "redish.fish"
+    bash_completion.install "completion/redish.bash"
+    zsh_completion.install "completion/_redish"
+
     (share/"redish/fish/functions").install "fish/functions/redish.fish"
-    (share/"redish/fish").install "fish/config.fish"
     bin.install "bin/redish"
-    bin.install "bin/redish.fish"
     etc.install "redish_config.example" => "redish_config"
   end
 
@@ -24,7 +26,7 @@ class Redish < Formula
       The redish script expects Fish shell and redis-cli to be installed.
       You may need to add ~/.redish_config and customize your passwords.
 
-      Use 'redish' from any shell, or 'redish.fish' in Fish shell.
+      Use 'redish' from any shell.
     EOS
   end
 end

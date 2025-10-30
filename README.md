@@ -43,7 +43,7 @@ redish <host> <command> [args...]
 
 Example:
 ```sh
-redish mlx-customer-states GET somekey
+redish analytics-cache GET somekey
 ```
 
 - Add `-v` or `--verbose` for verbose output about connection details.
@@ -53,20 +53,15 @@ redish mlx-customer-states GET somekey
 Edit `~/.redish_config` to add your Redis hosts and credentials.  
 See `redish_config.example` for the format.
 
-## Autocompletion (Fish Shell)
+## Autocompletion
 
-If you use Fish shell, hostnames and common Redis commands will autocomplete after typing `redish` thanks to the included `fish/config.fish`.
+Hostnames and common Redis commands will autocomplete after typing `redish`.
 
 ## Requirements
 
 - [fish shell](https://fishshell.com/) (used for internal scripting, automatically detected and invoked by the wrapper)
 - [redis-cli](https://redis.io/docs/manual/cli/) (installed automatically with Homebrew `redis`)
 - Bash or Zsh for main wrapper usage (Fish for advanced completions)
-
-## Advanced
-
-- Fish users can use autocompletion for host and command selection.
-- Bash/Zsh users use the `redish` command, which internally calls Fish.
 
 ## Security Note
 
@@ -79,24 +74,6 @@ MIT
 ## Contributing
 
 PRs welcome! Please file issues for bugs or feature requests.
-
-## Troubleshooting
-
-- Ensure `fish` and `redis-cli` are installed and in your PATH.
-- Ensure your `~/.redish_config` file is present and properly formatted.
-- For Fish autocompletion to work, make sure `fish/config.fish` is loaded in your Fish configuration.
-
-
-### Error: invalid attribute for formula 'abubakir1997/redish/redish': version (nil)
-
-Untap before installing
-
-```sh
-brew untap abubakir1997/redish
-brew tap abubakir1997/redish
-brew install redish
-```
-
 
 ## Deployment / Release
 
@@ -160,3 +137,19 @@ To publish a new version of `redish` to Homebrew:
 ---
 
 If you have any issues with releases or upgrading, see the Troubleshooting section below or file an issue!
+
+## Troubleshooting
+
+- Ensure `fish` and `redis-cli` are installed and in your PATH.
+- Ensure your `~/.redish_config` file is present and properly formatted.
+- For Fish autocompletion to work, make sure `fish/config.fish` is loaded in your Fish configuration.
+
+### Error: invalid attribute for formula 'abubakir1997/redish/redish': version (nil)
+
+Untap before installing
+
+```sh
+brew untap abubakir1997/redish
+brew tap abubakir1997/redish
+brew install redish
+```

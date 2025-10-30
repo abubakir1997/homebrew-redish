@@ -10,5 +10,5 @@ fi
 fish --private --command "
   set -x REDISH_CONFIG_FILE '$REDISH_CONFIG_FILE'
   source '$FISH_SCRIPT_PATH'
-  redish $argv
-"
+  redish \$argv
+" -- "$@"

@@ -1,0 +1,18 @@
+#compdef redish
+
+# Zsh completion for redish
+
+_redish_hosts() {
+  local config="${REDISH_CONFIG_FILE:-$HOME/.redish_config}"
+  if [[ -f "$config" ]]; then
+    grep -i "^Host " "$config" | cut -d ' ' -f 2- | tr ' ' '\n' | grep -v "\*"
+  fi
+}
+
+_redish_commands=(
+  GET SET DEL EXISTS PING INFO KEYS HSET HGET HGETALL HMSET HMGET LPUSH RPUSH LPOP RPOP LRANGE SADD SMEMBERS SUNION SDIFF ZADD ZREM ZRANGE ZSCORE ZCARD
+)
+
+_arguments \
+  '1:host:_redish_hosts' \
+  '2:command:_redish_commands'
