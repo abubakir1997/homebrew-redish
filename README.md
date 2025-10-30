@@ -103,6 +103,7 @@ To publish a new version of `redish` to Homebrew:
      ```sh
      curl -L https://github.com/abubakir1997/homebrew-redish/archive/refs/tags/v1.0.2.tar.gz -o v1.0.2.tar.gz
      shasum -a 256 v1.0.2.tar.gz
+     rm v1.0.2.tar.gz
      ```
    - Update the `url` and `sha256` in `Formula/redish.rb`:
       ```ruby
