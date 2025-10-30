@@ -2,7 +2,7 @@
 
 A Redis CLI wrapper with SSH-config-like host selection and autocomplete.
 
-![Autocomplete](https://file%2B.vscode-resource.vscode-cdn.net/Users/asalem987%40cable.comcast.com/Sites/homebrew-redish/docs/autocomplete.png?version%3D1761851187143)
+![Autocomplete](./docs/autocomplete.png)
 
 ## Features
 
