@@ -13,7 +13,7 @@ A Redis CLI wrapper with SSH-config-like host selection and autocomplete.
 ## Installation
 
 ```sh
-brew tap asalem987-comcast/redish
+brew tap abubakir1997/redish
 brew install redish
 cp $(brew --prefix)/etc/redish_config ~/.redis_config
 ```
