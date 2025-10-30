@@ -26,6 +26,14 @@ See `redish_config.example` for the format.
 ```sh
 brew upgrade redish
 ```
+If that doesn't work, try...
+
+```sh
+brew remove redish
+brew untap abubakir1997/redish
+brew tap abubakir1997/redish
+brew install redish
+```
 
 ## Usage
 
