@@ -1,8 +1,8 @@
 class Redish < Formula
   desc "Redis CLI wrapper with SSH-like host config and autocomplete"
-  homepage "https://github.com/asalem987-comcast/redish"
-  url "https://github.com/asalem987-comcast/redish/archive/refs/tags/v1.0.0.tar.gz"
-  sha256 "<SHA256_OF_TAR_GZ>"
+  homepage "https://github.com/abubakir1997/homebrew-redish"
+  url "https://github.com/abubakir1997/homebrew-redish/archive/refs/heads/main.tar.gz"
+  sha256 "<sha256_of_tarball>"
   license "MIT"
 
   depends_on "fish"
