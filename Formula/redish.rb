@@ -30,6 +30,25 @@ class Redish < Formula
       To customize the path, set REDISH_CONFIG_FILE in your shell config.
       For Fish, add: set -gx REDISH_CONFIG_FILE ~/.redish_config to ~/.config/fish/config.fish
       For Bash/Zsh, add: export REDISH_CONFIG_FILE=~/.redish_config to ~/.bashrc or ~/.zshrc
+
+      To enable bash completion for redish, ensure you have bash-completion installed:
+        brew install bash-completion@2
+      Then, add the following to your ~/.bash_profile or ~/.bashrc:
+        if [ -f $(brew --prefix)/etc/bash_completion ]; then
+          . $(brew --prefix)/etc/bash_completion
+        fi
+      After updating your config, restart your terminal or run:
+        source ~/.bash_profile
+        # or
+        source ~/.bashrc
+
+      
+      To enable zsh completion for redish, ensure you have zsh installed and add the following to your ~/.zshrc:
+        fpath+=($(brew --prefix)/share/zsh/site-functions)
+        autoload -Uz compinit
+        compinit
+      After updating your config, restart your terminal or run:
+        source ~/.zshrc
     EOS
   end
 end
