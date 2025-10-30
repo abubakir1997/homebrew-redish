@@ -1,7 +1,7 @@
 if status is-interactive
     # Autocomplete host names from the config file
     function __redish_hosts
-        command grep -i "^Host " $REDIS_CONFIG_FILE | cut -d ' ' -f 2- | tr ' ' '\n' | grep -v "\*"
+        command grep -i "^Host " $REDISH_CONFIG_FILE | cut -d ' ' -f 2- | tr ' ' '\n' | grep -v "\*"
     end
 
     # Complete first argument of 'redish' with host names

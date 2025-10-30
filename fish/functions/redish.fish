@@ -1,10 +1,10 @@
 # SSH-like Redis wrapper for Fish shell
 
 function redish
-    set config_file $REDIS_CONFIG_FILE
+    set config_file $REDISH_CONFIG_FILE
 
     if test (count $argv) -eq 0
-        echo "Usage: redis <host> <command> [args...]"
+        echo "Usage: redish <host> <command> [args...]"
         echo "Available hosts:"
         grep -i "^Host " $config_file | cut -d ' ' -f 2- | tr ' ' '\n' | grep -v "\*"
         return 1

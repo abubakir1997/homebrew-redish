@@ -4,7 +4,7 @@ A Redis CLI wrapper with SSH-config-like host selection and autocomplete.
 
 ## Features
 
-- **SSH config-style host management**: Store Redis connection info per host in a familiar format (`~/.redis_config`).
+- **SSH config-style host management**: Store Redis connection info per host in a familiar format (`~/.redish_config`).
 - **Shell autocompletion** for hosts and Redis commands (Fish shell).
 - **Works in Bash, Zsh, and Fish** via a universal wrapper.
 - **Homebrew installable**.
@@ -15,11 +15,11 @@ A Redis CLI wrapper with SSH-config-like host selection and autocomplete.
 ```sh
 brew tap abubakir1997/redish
 brew install redish
-cp $(brew --prefix)/etc/redish_config ~/.redis_config
+cp $(brew --prefix)/etc/redish_config ~/.redish_config
 ```
 
-Then **edit your `~/.redis_config`** to add your Redis hosts and credentials.
-See `redis_config.example` for the format.
+Then **edit your `~/.redish_config`** to add your Redis hosts and credentials.
+See `redish_config.example` for the format.
 
 ## Usage
 
@@ -36,8 +36,8 @@ redish mlx-customer-states GET somekey
 
 ## Configuration
 
-Edit `~/.redis_config` to add your Redis hosts and credentials.  
-See `redis_config.example` for the format.
+Edit `~/.redish_config` to add your Redis hosts and credentials.  
+See `redish_config.example` for the format.
 
 ## Autocompletion (Fish Shell)
 
@@ -69,5 +69,5 @@ PRs welcome! Please file issues for bugs or feature requests.
 ## Troubleshooting
 
 - Ensure `fish` and `redis-cli` are installed and in your PATH.
-- Ensure your `~/.redis_config` file is present and properly formatted.
+- Ensure your `~/.redish_config` file is present and properly formatted.
 - For Fish autocompletion to work, make sure `fish/config.fish` is loaded in your Fish configuration.

@@ -13,16 +13,16 @@ class Redish < Formula
     (share/"redish/fish").install "fish/config.fish"
     bin.install "bin/redish"
     bin.install "bin/redish.fish"
-    etc.install "redis_config.example" => "redish_config"
+    etc.install "redish_config.example" => "redish_config"
   end
 
   def caveats
     <<~EOS
       Copy the example config to your home directory:
-        cp #{etc}/redish_config ~/.redis_config
+        cp #{etc}/redish_config ~/.redish_config
 
       The redish script expects Fish shell and redis-cli to be installed.
-      You may need to add ~/.redis_config and customize your passwords.
+      You may need to add ~/.redish_config and customize your passwords.
 
       Use 'redish' from any shell, or 'redish.fish' in Fish shell.
     EOS

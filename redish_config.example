@@ -1,4 +1,4 @@
-# Example ~/.redis_config for redish
+# Example ~/.redish_config for redish
 # Format is similar to SSH config: one block per Redis host.
 
 Host analytics-cache
@@ -21,4 +21,4 @@ Host dev-redis
 #   Password <password>
 #   TLS yes                # Optional, defaults to no
 
-# Save this file as ~/.redis_config.
+# Save this file as ~/.redish_config.

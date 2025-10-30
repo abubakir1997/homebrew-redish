@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-REDIS_CONFIG_FILE="${REDIS_CONFIG_FILE:-$HOME/.redis_config}"
+REDISH_CONFIG_FILE="${REDISH_CONFIG_FILE:-$HOME/.redish_config}"
 FISH_SCRIPT_PATH="$(brew --prefix)/share/redish/fish/functions/redish.fish"
 
 if ! command -v fish >/dev/null; then
@@ -8,7 +8,7 @@ if ! command -v fish >/dev/null; then
 fi
 
 fish --private --command "
-  set -x REDIS_CONFIG_FILE '$REDIS_CONFIG_FILE'
+  set -x REDISH_CONFIG_FILE '$REDISH_CONFIG_FILE'
   source '$FISH_SCRIPT_PATH'
-  redis $argv
+  redish $argv
 "
