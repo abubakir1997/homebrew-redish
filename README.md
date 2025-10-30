@@ -24,9 +24,7 @@ See `redish_config.example` for the format.
 ## Update
 
 ```sh
-brew untap abubakir1997/redish
-brew tap abubakir1997/redish
-brew install redish
+brew upgrade redish
 ```
 
 ## Usage
@@ -90,3 +88,67 @@ brew untap abubakir1997/redish
 brew tap abubakir1997/redish
 brew install redish
 ```
+
+
+## Deployment / Release
+
+To publish a new version of `redish` to Homebrew:
+
+1. **Make and commit your changes**  
+   ```sh
+   git add .
+   git commit -m "Your change description"
+   git push
+   ```
+
+2. **Tag a new release**  
+   Choose a new version number (e.g., `v1.0.1`):
+   ```sh
+   git tag v1.0.1
+   git push origin v1.0.1
+   ```
+
+3. **Draft a release on GitHub (optional but recommended)**  
+   - Go to your repo’s Releases page.
+   - Click "Draft a new release" and select your new tag.
+
+4. **Update the Homebrew formula (`Formula/redish.rb`)**  
+   - Change the `url` and `sha256` to the new version:
+     ```ruby
+     url "https://github.com/abubakir1997/homebrew-redish/archive/refs/tags/v1.0.1.tar.gz"
+     sha256 "<sha256_for_v1.0.1>"
+     ```
+   - Get the sha256 for the new tarball:
+     ```sh
+     curl -L https://github.com/abubakir1997/homebrew-redish/archive/refs/tags/v1.0.1.tar.gz -o v1.0.1.tar.gz
+     shasum -a 256 v1.0.1.tar.gz
+     ```
+
+5. **Commit and push the updated formula**
+   ```sh
+   git add Formula/redish.rb
+   git commit -m "Update formula for v1.0.1"
+   git push
+   ```
+
+6. **Users can upgrade**
+   ```sh
+   brew upgrade redish
+   ```
+
+---
+
+**Summary Table**
+
+| Step                | Command/Action                                                                 |
+|---------------------|-------------------------------------------------------------------------------|
+| Commit changes      | `git add . && git commit -m "..." && git push`                                 |
+| Tag new version     | `git tag v1.0.1 && git push origin v1.0.1`                                    |
+| Get tarball & SHA   | `curl -L ... -o v1.0.1.tar.gz` & `shasum -a 256 v1.0.1.tar.gz`                |
+| Update formula      | Edit `Formula/redish.rb` with new URL/SHA                                     |
+| Push formula        | `git add Formula/redish.rb && git commit -m "..." && git push`                |
+| User upgrade        | `brew upgrade redish`                                                          |
+
+---
+
+If you have any issues with releases or upgrading, see the Troubleshooting section below or file an issue!
