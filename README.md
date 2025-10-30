@@ -88,10 +88,10 @@ To publish a new version of `redish` to Homebrew:
    ```
 
 2. **Tag a new release**  
-   Choose a new version number (e.g., `v1.0.2`):
+   Choose a new version number (e.g., `v1.0.3`):
    ```sh
-   git tag v1.0.2
-   git push origin v1.0.2
+   git tag v1.0.3
+   git push origin v1.0.3
    ```
 
 3. **Draft a release on GitHub (optional but recommended)**  
@@ -101,20 +101,20 @@ To publish a new version of `redish` to Homebrew:
 4. **Update the Homebrew formula (`Formula/redish.rb`)**  
    - Get the sha256 for the new tarball:
      ```sh
-     curl -L https://github.com/abubakir1997/homebrew-redish/archive/refs/tags/v1.0.2.tar.gz -o v1.0.2.tar.gz
-     shasum -a 256 v1.0.2.tar.gz
-     rm v1.0.2.tar.gz
+     curl -L https://github.com/abubakir1997/homebrew-redish/archive/refs/tags/v1.0.3.tar.gz -o v1.0.3.tar.gz
+     shasum -a 256 v1.0.3.tar.gz
+     rm v1.0.3.tar.gz
      ```
    - Update the `url` and `sha256` in `Formula/redish.rb`:
       ```ruby
-      url "https://github.com/abubakir1997/homebrew-redish/archive/refs/tags/v1.0.2.tar.gz"
+      url "https://github.com/abubakir1997/homebrew-redish/archive/refs/tags/v1.0.3.tar.gz"
       sha256 "<COPIED_SHA_256>"
       ```
 
 5. **Commit and push the updated formula**
    ```sh
    git add Formula/redish.rb
-   git commit -m "chore: update formula for v1.0.2"
+   git commit -m "chore: update formula for v1.0.3"
    git push
    ```
 
@@ -131,8 +131,8 @@ To publish a new version of `redish` to Homebrew:
 | Step                | Command/Action                                                                 |
 |---------------------|-------------------------------------------------------------------------------|
 | Commit changes      | `git add . && git commit -m "..." && git push`                                 |
-| Tag new version     | `git tag v1.0.2 && git push origin v1.0.2`                                    |
-| Get tarball & SHA   | `curl -L ... -o v1.0.2.tar.gz` & `shasum -a 256 v1.0.2.tar.gz`                |
+| Tag new version     | `git tag v1.0.3 && git push origin v1.0.3`                                    |
+| Get tarball & SHA   | `curl -L ... -o v1.0.3.tar.gz` & `shasum -a 256 v1.0.3.tar.gz`                |
 | Update formula      | Edit `Formula/redish.rb` with new URL/SHA                                     |
 | Push formula        | `git add Formula/redish.rb && git commit -m "..." && git push`                |
 | User upgrade        | `brew upgrade redish`                                                          |
