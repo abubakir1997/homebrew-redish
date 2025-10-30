@@ -24,6 +24,7 @@ See `redish_config.example` for the format.
 ## Update
 
 ```sh
+brew update
 brew upgrade redish
 ```
 If that doesn't work, try...
@@ -118,6 +119,7 @@ To publish a new version of `redish` to Homebrew:
 
 6. **Users can upgrade**
    ```sh
+   brew update
    brew upgrade redish
    ```
 
