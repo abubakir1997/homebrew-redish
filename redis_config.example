@@ -1,0 +1,35 @@
+# Example ~/.redis_config for redish
+# Format is similar to SSH config: one block per Redis host.
+
+Host customer-states-prod-1
+  HostName master.customer-states-prod-1.uo6enc.use1.cache.amazonaws.com
+  Port 6379
+  Password prod1Password
+
+Host customer-states-prod-2
+  HostName master.customer-states-prod-2.uo6enc.use1.cache.amazonaws.com
+  Port 6380
+  Password prod2Password
+  TLS yes
+
+Host analytics-cache
+  HostName analytics.redis.internal.company.com
+  Port 6379
+  Password analyticsPassword
+
+Host dev-redis
+  HostName localhost
+  Port 6379
+  Password devpassword
+
+# You can add as many hosts as you need using the same structure.
+# TLS can be set to "yes" if your Redis instance requires TLS.
+# Spaces/tabs before each config line are allowed.
+
+# Host <name>
+#   HostName <redis-server-address>
+#   Port <port>            # Optional, defaults to 6379
+#   Password <password>
+#   TLS yes                # Optional, defaults to no
+
+# Save this file as ~/.redis_config.
